@@ -5,22 +5,19 @@ A quick homebrew for running [llama2.c](https://github.com/karpathy/llama2.c) on
 ![image](./IMG0.jpeg)
 
 ## Prerequisites
-*Taken from [hello-world-psp](https://github.com/filfreire/hello-world-psp)*
 
-Setup `pspdev` toolchain, [see docs](https://psp-dev.org/doku.php?id=tutorial:toolchain_setup).
-
-You can use [Docker image](https://github.com/filfreire/pspdev-docker) of [pspdev](https://github.com/pspdev/pspdev). There's helper script that uses aliases this container in this repo:
+You will need docker and can use the [ticky/pspdev](https://hub.docker.com/r/ticky/pspdev/) docker image.
 
 ```shell
-sudo cp pspdev-docker /usr/local/bin
+docker pull ticky/pspdev
 ```
 
 ## How to build
 - Clone this repo and `cd` into the repo folder.
-- If you used the `docker` alternative, run:
 
+Run:
 ```shell
-psp-docker make
+docker run -it --rm -v "$PWD:/src" ticky/pspdev make
 ```
 
 ## Installation
