@@ -15,9 +15,15 @@ docker pull ticky/pspdev
 ## How to build
 - Clone this repo and `cd` into the repo folder.
 
+Mac/Linux
 Run:
 ```shell
 docker run -it --rm -v "$PWD:/src" ticky/pspdev make
+```
+Windows
+Run:
+```shell
+docker run -it --rm -v "%cd%:/src" ticky/pspdev make
 ```
 
 ## Installation
