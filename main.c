@@ -960,13 +960,17 @@ long time_in_ms()
 */
 
 long time_in_ms() {
-    // Get the system time
-    SceUInt64 systemTime;
+
+    SceKernelSysClock systemTime;
     sceKernelGetSystemTime(&systemTime);
     
-    // Convert time from microseconds to milliseconds
-    return (long)(systemTime / 1000);
+    // systemTime = hi<<32 | low
+    uint64_t t = ((uint64_t)systemTime.hi << 32) | systemTime.low;
+
+    // Convert from microseconds to milliseconds
+    return (long)(t / 1000);
 }
+
 
 
 // ----------------------------------------------------------------------------
