@@ -1,9 +1,11 @@
 TARGET = llama2psp
 OBJS = main.o
 
-CFLAGS =
-CXXFLAGS = $(CFLAGS) -std=c++14 -fno-rtti
-ASFLAGS = $(CFLAGS)
+CFLAGS += -std=gnu99 -G0
+CXXFLAGS += $(CFLAGS) -std=c++14 -fno-rtti
+ASFLAGS += $(CFLAGS)
+
+LIBS += -lm
 
 # PSP Stuff
 BUILD_PRX = 1
@@ -16,3 +18,4 @@ PSP_EBOOT_TITLE = llama2psp
 
 PSPSDK=$(shell psp-config --pspsdk-path)
 include $(PSPSDK)/lib/build.mak
+
