@@ -6,10 +6,10 @@ A quick homebrew for running [llama2.c](https://github.com/karpathy/llama2.c) on
 
 ## Prerequisites
 
-You will need docker and can use the [ticky/pspdev](https://hub.docker.com/r/ticky/pspdev/) docker image.
+You will need docker and can use the [pspdev/pspdev](https://hub.docker.com/r/pspdev/pspdev) docker image.
 
 ```shell
-docker pull ticky/pspdev
+docker pull pspdev/pspdev
 ```
 
 ## How to build
@@ -18,12 +18,12 @@ docker pull ticky/pspdev
 Mac/Linux
 Run:
 ```shell
-docker run -it --rm -v "$PWD:/src" ticky/pspdev make
+docker run -it --rm -v "$PWD:/src" -w /src pspdev/pspdev make
 ```
 Windows
 Run:
 ```shell
-docker run -it --rm -v "%cd%:/src" ticky/pspdev make
+docker run -it --rm -v "%cd%:/src" -w /src pspdev/pspdev make
 ```
 
 ## Installation
